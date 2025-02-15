@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Search</title>
+        <title>Google Search</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <form action="https://www.google.com/search">
-            <input type="text" name="q">
-            <input type="submit" value="Google Search">
-        </form>
-        <a href="./googleAdvancedSearch.html">Google Advanced Search</a>
-        <a href="./googleImageSearch.html">Google Image Search</a>
+        <div class="position-relative bg-white">
+            <!-- links to other pages -->
+            <div class="d-flex flex-row-reverse position-absolute top-0 end-0 btn-group">
+                <a class="btn btn-link" href="./googleAdvancedSearch.html">Advanced</a>
+                <a class="btn btn-link" href="./googleImageSearch.html">Images</a>
+            </div>
+            <!-- Container to wrap the search input and its neighbours -->
+            <div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+                <form action="https://www.google.com/search">
+                    <div class="d-flex flex-column">
+                        <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" width="350">
+                        <input id="search-bar" type="text" name="q" class="mb-3">
+                        <input type="submit" value="Google Search" class="btn btn-secondary ms-auto me-auto mt-5 mb-auto">
+                    </div>
+                </form>
+                
+            </div>
+        </div>
     </body>
 </html>
