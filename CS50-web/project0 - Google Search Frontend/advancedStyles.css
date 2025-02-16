@@ -1,0 +1,38 @@
+.advanced-search-header {
+    background-color: #f1f1f1;
+}
+
+label {
+    font-size: 13px;
+    color: #222;
+}
+
+.form-control {
+    height: 25px;
+    padding: 1px 8px;
+}
+
+.btn-primary {
+    background-color: #4d90fe;
+    border-color: #3079ed;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 0 12px;
+    height: 30px;
+    min-width: 120px;
+}
+
+.btn-primary:hover {
+    background-color: #357ae8;
+    border-color: #2f5bb7;
+}
+
+.text-danger {
+    color: #d93025 !important;
+    font-size: 20px !important;
+    margin-left: 10px;
+}
+
+.container {
+    max-width: 1140px;
+} 
