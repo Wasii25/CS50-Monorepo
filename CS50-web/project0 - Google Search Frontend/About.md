@@ -30,8 +30,3 @@ This project replicates the functionality of Google Search, Google Image Search,
   ![Advanced Search](https://github.com/user-attachments/assets/81a3bd27-fe56-454f-b8a6-478342600d94)
   ![Advanced Results](https://github.com/user-attachments/assets/167901ad-c42a-4eb4-bc2c-391fb1ce499d)
   ![Filtered Results](https://github.com/user-attachments/assets/563aa890-3294-496e-92b7-88dad80dc95f)
-
----
-### 📝 Notes
-This markdown structure is streamlined with headings, bullet points, and images for clarity and easy navigation.
-
