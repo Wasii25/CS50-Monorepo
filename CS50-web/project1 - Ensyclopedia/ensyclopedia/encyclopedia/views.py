@@ -2,6 +2,14 @@ from django.shortcuts import render
 from . import util
 from markdown import markdown
 from django.utils.safestring import mark_safe
+from django import forms
+from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
+
+class NewTaskForm(forms.Form):
+    search = forms.CharField(label="Search")
 
 
 def convert_markdown_to_html(content):
@@ -16,6 +24,7 @@ def convert_markdown_to_html(content):
 
 
 def index(request):
+    print(util.list_entries)
     return render(request, "encyclopedia/index.html", {"entries": util.list_entries()})
 
 
@@ -33,3 +42,13 @@ def wiki(request, title):
         )
     else:
         return render(request, "encyclopedia/error.html", {"message": "Page not found"})
+
+
+def search(request):
+    if request.method == "POST":
+        query = request.POST.get("q")  # Get the search query
+        if query in util.list_entries():
+            return redirect("wiki", title=query)  # Redirect to the wiki page
+        # Handle case where page doesn't exist
+
+    return render(request, "encyclopedia/index.html")
