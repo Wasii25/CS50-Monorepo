@@ -1,11 +1,8 @@
-from django.shortcuts import render
 from . import util
 from markdown import markdown
 from django.utils.safestring import mark_safe
 from django import forms
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 
 
 class NewTaskForm(forms.Form):
@@ -50,5 +47,15 @@ def search(request):
         if query in util.list_entries():
             return redirect("wiki", title=query)  # Redirect to the wiki page
         # Handle case where page doesn't exist
+
+        search_query_list = []
+        for entry in util.list_entries():
+            if query in entry:
+                search_query_list.append(entry)
+
+        if len(search_query_list) != 0:
+            return render(
+                request, "encyclopedia/search.html", {"entries": search_query_list}
+            )
 
     return render(request, "encyclopedia/index.html")
